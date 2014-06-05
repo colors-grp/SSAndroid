@@ -7,32 +7,69 @@
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="19" />
+
     <uses-permission android:name="android.permission.INTERNET" />
-    
+
     <application
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@drawable/icon"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.colors.supersaym.SplashActivity"
+            android:screenOrientation="portrait"
             android:label="@string/title_activity_splash" >
-          
         </activity>
-           <activity
+        <activity
             android:name="com.colors.supersaym.MainActivity"
+            android:screenOrientation="portrait"
             android:label="@string/title_activity_main" >
-              <intent-filter>
+        </activity>
+        <activity
+            android:name="com.facebook.LoginActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name" >
+        </activity>
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/app_id" />
+
+        <activity
+            android:name="com.colors.supersaym.CollectionsActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/title_activity_collections" >
+        </activity>
+        <activity
+            android:name="com.colors.supersaym.HomeActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/title_activity_home" >
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            </activity>
-        <activity
-            android:name="com.facebook.LoginActivity"
-            android:label="@string/app_name">
         </activity>
-        <meta-data android:value="@string/app_id" android:name="com.facebook.sdk.ApplicationId"/>
+        <activity
+            android:name="com.colors.supersaym.MeActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/title_activity_me" >
+        </activity>
+        <activity
+            android:name="com.colors.supersaym.NotificationActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/title_activity_notification" >
+        </activity>
+        <activity
+            android:name="com.colors.supersaym.ScoreboardActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/title_activity_scoreboard" >
+        </activity>
+        <activity
+            android:name="com.colors.supersaym.GuideActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/title_activity_guide" >
+        </activity>
     </application>
 
 </manifest>
