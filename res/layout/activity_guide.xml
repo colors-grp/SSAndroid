@@ -5,4 +5,8 @@
     android:layout_height="match_parent"
     android:background="@drawable/bg"
     tools:context="com.colors.supersaym.GuideActivity"
-    tools:ignore="MergeRootFrame" />
+    tools:ignore="MergeRootFrame" >
+
+    <include layout="@layout/header" />
+
+</FrameLayout>

@@ -8,16 +8,22 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class EpisodesActivity extends Activity {
 	ImageView alfleila, mnqatel, mosalsalat, sallyseyamak;
+	TextView headerTxt;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_episodes);
 		Log.v("episode", "-----------ep");
+		
+		
+		headerTxt = (TextView) findViewById(R.id.header_txt);
+		headerTxt.setText(R.string.episodes);
 		
 		alfleila = (ImageView) findViewById(R.id.alfleila);
 		mnqatel = (ImageView) findViewById(R.id.mnqatel);

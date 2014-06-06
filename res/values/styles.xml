@@ -6,7 +6,7 @@
     -->
     <style name="AppBaseTheme" parent="android:Theme.Light">
         <!--  <item name="android:background">@drawable/bg</item> -->
-        <item name="android:windowTitleBackgroundStyle">@style/CustomWindowTitleBackground</item>
+       <!--  <item name="android:windowTitleBackgroundStyle">@style/CustomWindowTitleBackground</item> -->
         <!--
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
@@ -16,9 +16,10 @@
 
     <!-- Application theme. -->
     <style name="AppTheme" parent="AppBaseTheme">
+        
        <!--   <item name="android:background">@drawable/bg</item> -->
-       <item name="android:windowTitleBackgroundStyle">@style/CustomWindowTitleBackground</item>
-       <item name="android:windowTitleSize">60dip</item>
+       <!-- <item name="android:windowTitleBackgroundStyle">@style/CustomWindowTitleBackground</item>
+       <item name="android:windowTitleSize">60dip</item> -->
        
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
