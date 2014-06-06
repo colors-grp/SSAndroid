@@ -2,14 +2,12 @@ package com.colors.supersaym;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class EpisodesActivity extends Activity {
 	ImageView alfleila, mnqatel, mosalsalat, sallyseyamak;
@@ -19,8 +17,6 @@ public class EpisodesActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_episodes);
-		Log.v("episode", "-----------ep");
-		
 		
 		headerTxt = (TextView) findViewById(R.id.header_txt);
 		headerTxt.setText(R.string.episodes);

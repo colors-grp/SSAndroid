@@ -13,30 +13,29 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginRight="10dp"
+        android:layout_margin="15dip"
+        android:layout_gravity="center"
         android:orientation="horizontal" >
 
         <ImageView
             android:id="@+id/alfleila"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="5dip"
+            android:layout_marginRight="10dip"
             android:src="@drawable/alfleila" />
         
         <ImageView
             android:id="@+id/mnqatel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="5dip"
+            android:layout_marginRight="10dip"
             android:src="@drawable/mnqatel" />
         
         <ImageView
             android:id="@+id/mosalsalat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="5dip"
+            android:layout_marginRight="10dip"
             android:src="@drawable/mosalsalat" />
         
         <ImageView
@@ -46,6 +45,7 @@
             android:src="@drawable/sallyseyamak" />
         
     </LinearLayout>
+    
     
 
 </LinearLayout>

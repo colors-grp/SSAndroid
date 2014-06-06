@@ -70,6 +70,10 @@
             android:label="@string/title_activity_guide"
             android:screenOrientation="portrait" >
         </activity>
+        <activity
+            android:name="com.colors.supersaym.GuideDetailsActivity"
+            android:label="@string/title_activity_guide_details" >
+        </activity>
     </application>
 
 </manifest>

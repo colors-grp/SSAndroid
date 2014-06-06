@@ -2,9 +2,9 @@
     android:id="@+id/TabLayout"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:padding="5dip"
-    android:gravity="center"
+    android:paddingTop="5dip"
     android:background="#EDC815"
+    android:gravity="center"
     android:orientation="vertical" >
 
     <ImageView
@@ -17,8 +17,8 @@
         android:id="@+id/TabTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="5dip"
-        android:text="Text"
-         />
+        android:maxLines="1"
+        android:text="@string/hello_world"
+        android:textColor="#FF0000" />
 
 </LinearLayout>

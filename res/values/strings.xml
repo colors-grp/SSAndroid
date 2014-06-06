@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">Super Sayem</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="hello_world">Hello</string>
     <string name="title_activity_splash">SplashActivity</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="app_id">170161316509571</string>
@@ -19,5 +19,6 @@
     <string name="notification">Notifications</string>
     <string name="guide">Guide</string>
     <string name="title_activity_test">TestActivity</string>
+    <string name="title_activity_guide_details">GuideDetailsActivity</string>
 
 </resources>
