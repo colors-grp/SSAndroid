@@ -5,47 +5,46 @@
     android:layout_height="match_parent"
     android:background="@drawable/bg"
     android:orientation="vertical"
-    tools:context="com.colors.supersaym.EpisodesActivity"
-    tools:ignore="MergeRootFrame" >
-    
-    <include layout="@layout/header"/>
+    tools:context="com.colors.supersaym.EpisodesActivity" >
+
+    <include layout="@layout/header" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_marginLeft="10dp"
-        android:layout_centerHorizontal="true"
         android:layout_marginRight="10dp"
+        android:background="@android:color/white"
         android:orientation="horizontal" >
 
         <ImageView
             android:id="@+id/alfleila"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="5dip"
+            android:layout_margin="5dp"
+            android:scaleType="fitXY"
             android:src="@drawable/alfleila" />
-        
+
         <ImageView
             android:id="@+id/mnqatel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="5dip"
             android:src="@drawable/mnqatel" />
-        
+
         <ImageView
             android:id="@+id/mosalsalat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="5dip"
             android:src="@drawable/mosalsalat" />
-        
+
         <ImageView
             android:id="@+id/sallyseyamak"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/sallyseyamak" />
-        
     </LinearLayout>
-    
 
 </LinearLayout>

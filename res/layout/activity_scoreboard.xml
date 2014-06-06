@@ -1,4 +1,4 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container"
     android:layout_width="match_parent"
@@ -7,6 +7,27 @@
     tools:context="com.colors.supersaym.ScoreboardActivity"
     tools:ignore="MergeRootFrame" >
 
-    <include layout="@layout/header" />
+    <include
+        android:id="@+id/headerLayout"
+        layout="@layout/header" />
 
-</FrameLayout>
+    <LinearLayout
+        android:id="@+id/segmentCotrol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/headerLayout"
+        android:orientation="horizontal" >
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/scroreBoardList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:divider="@drawable/separator"
+        android:layout_below="@id/segmentCotrol" >
+    </ListView>
+
+
+
+</RelativeLayout>
