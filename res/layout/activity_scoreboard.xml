@@ -18,16 +18,29 @@
         android:layout_below="@id/headerLayout"
         android:orientation="horizontal" >
 
+        <Button
+            android:id="@+id/toggle_option1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5sp"
+            android:height="50sp"
+            android:width="100sp" />
+
+        <Button
+            android:id="@+id/button_option1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6sp"
+            android:height="50sp"
+            android:text="See" />
     </LinearLayout>
 
     <ListView
         android:id="@+id/scroreBoardList"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:divider="@drawable/separator"
-        android:layout_below="@id/segmentCotrol" >
+        android:layout_below="@id/segmentCotrol"
+        android:divider="@drawable/separator" >
     </ListView>
-
-
 
 </RelativeLayout>

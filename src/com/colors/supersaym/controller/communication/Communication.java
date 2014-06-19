@@ -41,7 +41,6 @@ public class Communication {
 
 	private static int TIMEOUT_MILLISEC = 5000;
 	public static String Base_URL="	http://gloryette.org/mobile/index.php?/api/hitcall";
-	public static String security_key= "Test123";
 	private static DefaultHttpClient h;
 
 	/**

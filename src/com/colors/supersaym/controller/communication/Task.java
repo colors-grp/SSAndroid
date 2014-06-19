@@ -9,7 +9,7 @@ import android.content.Context;
 public abstract class Task {
 
 	public enum TaskID {
-	ScoreTask, AllScoreTask,FriendsScoreTask
+	ScoreTask, AllScoreTask,FriendsScoreTask,SaveUserTask
 	
 	}
 

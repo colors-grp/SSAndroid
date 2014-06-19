@@ -25,7 +25,7 @@ public class MeActivity extends Activity implements DataRequestor {
 
 	TextView headerTxt, userName, mosalast, mnlqatel, sallyseyamk;
 	private ProgressDialog mSpinnerProgress;
-
+	SharedPreferences appPreferences;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -33,7 +33,7 @@ public class MeActivity extends Activity implements DataRequestor {
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
 				WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		setContentView(R.layout.activity_me);
-		SharedPreferences appPreferences = getSharedPreferences(
+		 appPreferences = getSharedPreferences(
 				Constants.appPreferencesName, Context.MODE_PRIVATE);
 
 		headerTxt = (TextView) findViewById(R.id.header_txt);
@@ -63,7 +63,7 @@ public class MeActivity extends Activity implements DataRequestor {
 			mSpinnerProgress.setMessage("Loading ....");
 			mSpinnerProgress.show();
 			Task task = new MeScoreBoardTask(this, getApplicationContext(),
-					UIManager.getInstance().getId());
+					appPreferences.getString(Constants.userID, ""));
 			AsyncTaskInvoker.RunTaskInvoker(task);
 		} else {
 			Toast.makeText(getApplicationContext(), "No Internet Connection",
@@ -99,10 +99,11 @@ public class MeActivity extends Activity implements DataRequestor {
 
 	@Override
 	public void onFinish(Task task) {
-		mSpinnerProgress.hide();
 		mnlqatel.setText(UIManager.getInstance().getMmanElQatel());
 		mosalast.setText(UIManager.getInstance().getmMosalslatScore());
 		sallyseyamk.setText(UIManager.getInstance().getmSallySyamakScore());
+		mSpinnerProgress.cancel();
+
 	}
 
 }
