@@ -15,6 +15,7 @@ import android.widget.TextView;
 import com.colors.supersaym.R;
 import com.colors.supersaym.dataobjects.UserData;
 import com.colors.supersaym.storage.ImageLoader;
+import com.facebook.widget.ProfilePictureView;
 
 
 
@@ -61,13 +62,15 @@ public ScoreBoardAdapter(Activity parentActivity,ArrayList<UserData>arraySData)
 
 		TextView score = (TextView) vi.findViewById(R.id.userScore); // artist name
 		TextView rank = (TextView) vi.findViewById(R.id.userRank); // artist name
+		ProfilePictureView	profilePictureView = (ProfilePictureView)vi.findViewById(R.id.userimage);
 
-		ImageView thumb_image = (ImageView) vi.findViewById(R.id.userimage); // thumb
 														// image
 		UserData data = originalData.get(position);
 		// Setting all values in listview
 		name.setText(data.name);
-//		imageLoader.DisplayImage(data.fbid,thumb_image);
+		score.setText(data.score);
+		rank.setText(data.rank);
+		profilePictureView.setProfileId(data.fbid);
 		return vi;
 	}
 

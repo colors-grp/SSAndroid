@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import android.app.Activity;
 import android.content.Intent;
 
-import com.colors.supersaym.HomeActivity;
 import com.colors.supersaym.dataobjects.UserData;
+import com.colors.supersaym.tabs.HomeActivity;
 
 public class UIManager {
 

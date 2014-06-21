@@ -1,8 +1,11 @@
-package com.colors.supersaym;
+package com.colors.supersaym.Views;
 
 
 
+import com.colors.supersaym.R;
+import com.colors.supersaym.R.layout;
 import com.colors.supersaym.storage.Constants;
+import com.colors.supersaym.tabs.HomeActivity;
 
 import android.app.Activity;
 import android.content.Context;

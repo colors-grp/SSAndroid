@@ -1,18 +1,19 @@
-package com.colors.supersaym;
+package com.colors.supersaym.Views;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.util.Log;
-import android.view.Menu;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
-import android.view.Window;
-import android.view.WindowManager;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.colors.supersaym.R;
 import com.colors.supersaym.controller.communication.AsyncTaskInvoker;
 import com.colors.supersaym.controller.communication.ConnectionDetector;
 import com.colors.supersaym.controller.communication.Task;
@@ -21,63 +22,58 @@ import com.colors.supersaym.dataprovider.DataRequestor;
 import com.colors.supersaym.storage.Constants;
 import com.colors.supersaym.storage.UIManager;
 
-public class MeActivity extends Activity implements DataRequestor {
+public class MeActivity extends Fragment implements DataRequestor {
 
 	TextView headerTxt, userName, mosalast, mnlqatel, sallyseyamk;
 	private ProgressDialog mSpinnerProgress;
-	SharedPreferences appPreferences;
+	private View rootView;
+
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		requestWindowFeature(Window.FEATURE_NO_TITLE);
-		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-				WindowManager.LayoutParams.FLAG_FULLSCREEN);
-		setContentView(R.layout.activity_me);
-		 appPreferences = getSharedPreferences(
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+
+		rootView = inflater.inflate(R.layout.activity_me, container, false);
+
+		SharedPreferences appPreferences = getActivity().getSharedPreferences(
 				Constants.appPreferencesName, Context.MODE_PRIVATE);
 
-		headerTxt = (TextView) findViewById(R.id.header_txt);
+		headerTxt = (TextView) rootView.findViewById(R.id.header_txt);
 		headerTxt.setText(R.string.me);
 
-		userName = (TextView) findViewById(R.id.name);
+		userName = (TextView) rootView.findViewById(R.id.name);
 		if (appPreferences.contains(Constants.userName)) {
 
 			userName.setText(appPreferences.getString(Constants.userName, ""));
-			Log.d("Shaimaa", "FB USerID "+appPreferences.getString(Constants.userID, ""));
+			Log.d("Shaimaa",
+					"FB USerID "
+							+ appPreferences.getString(Constants.userID, ""));
 
 		}
-		mosalast = (TextView) findViewById(R.id.alfScore);
-		sallyseyamk = (TextView) findViewById(R.id.games);
-		mnlqatel = (TextView) findViewById(R.id.killer);
+		mosalast = (TextView) rootView.findViewById(R.id.alfScore);
+		sallyseyamk = (TextView) rootView.findViewById(R.id.games);
+		mnlqatel = (TextView) rootView.findViewById(R.id.killer);
 
 		requestData();
+		return rootView;
 	}
 
 	private void requestData() {
 
-		if (ConnectionDetector.getInstance(getApplicationContext())
+		if (ConnectionDetector.getInstance(getActivity())
 				.isConnectingToInternet()) {
-			mSpinnerProgress = new ProgressDialog(MeActivity.this);
+			mSpinnerProgress = new ProgressDialog(getActivity());
 			mSpinnerProgress.setIndeterminate(true);
 			mSpinnerProgress.setProgressStyle(ProgressDialog.STYLE_SPINNER);
 			mSpinnerProgress.setMessage("Loading ....");
 			mSpinnerProgress.show();
-			Task task = new MeScoreBoardTask(this, getApplicationContext(),
-					appPreferences.getString(Constants.userID, ""));
+			Task task = new MeScoreBoardTask(this, getActivity(), UIManager
+					.getInstance().getId());
 			AsyncTaskInvoker.RunTaskInvoker(task);
 		} else {
-			Toast.makeText(getApplicationContext(), "No Internet Connection",
+			Toast.makeText(getActivity(), "No Internet Connection",
 					Toast.LENGTH_LONG).show();
 		}
 
-	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.me, menu);
-		return true;
 	}
 
 	@Override

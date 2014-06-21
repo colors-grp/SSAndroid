@@ -1,4 +1,4 @@
-package com.colors.supersaym;
+package com.colors.supersaym.Views;
 
 import java.util.Arrays;
 
@@ -15,6 +15,9 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.colors.supersaym.R;
+import com.colors.supersaym.R.id;
+import com.colors.supersaym.R.layout;
 import com.colors.supersaym.controller.communication.AsyncTaskInvoker;
 import com.colors.supersaym.controller.communication.ConnectionDetector;
 import com.colors.supersaym.controller.communication.Task;

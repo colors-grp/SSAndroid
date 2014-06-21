@@ -4,42 +4,41 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg"
-    tools:context="com.colors.supersaym.ScoreboardActivity"
+    tools:context="com.colors.supersaym.Views.ScoreboardActivity"
     tools:ignore="MergeRootFrame" >
 
     <include
         android:id="@+id/headerLayout"
         layout="@layout/header" />
 
-    <LinearLayout
-        android:id="@+id/segmentCotrol"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentRight="true"
         android:layout_below="@id/headerLayout"
+        android:layout_margin="12dp"
+        android:layout_marginRight="10dp"
         android:orientation="horizontal" >
 
-        <Button
-            android:id="@+id/toggle_option1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="5sp"
-            android:height="50sp"
-            android:width="100sp" />
+        <RadioButton
+            android:id="@+id/all"
+            android:layout_weight="0.6"
+            android:checked="true"
+            android:text="All" />
 
-        <Button
-            android:id="@+id/button_option1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="6sp"
-            android:height="50sp"
-            android:text="See" />
-    </LinearLayout>
+        <RadioButton
+            android:id="@+id/friends"
+            android:layout_weight="0.5"
+            android:text="My Friends" />
+    </RadioGroup>
 
     <ListView
         android:id="@+id/scroreBoardList"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/segmentCotrol"
+        android:layout_below="@id/radioGroup"
+        android:layout_marginTop="10dp"
         android:divider="@drawable/separator" >
     </ListView>
 

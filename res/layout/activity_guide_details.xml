@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/bg"
     android:orientation="vertical"
-    tools:context="com.colors.supersaym.GuideActivity"
+    tools:context="com.colors.supersaym.Views.GuideActivity"
     tools:ignore="MergeRootFrame" >
 
     <include layout="@layout/header" />

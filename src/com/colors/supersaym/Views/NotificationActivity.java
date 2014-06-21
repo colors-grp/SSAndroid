@@ -1,31 +1,34 @@
-package com.colors.supersaym;
+package com.colors.supersaym.Views;
 
-import android.app.Activity;
+import com.colors.supersaym.R;
+
 import android.os.Bundle;
-import android.view.Menu;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TextView;
 
-public class NotificationActivity extends Activity {
+public class NotificationActivity extends Fragment {
 
 	TextView headerTxt;
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_notification);
 
-		headerTxt = (TextView) findViewById(R.id.header_txt);
+	
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+
+		View rootView = inflater.inflate(R.layout.activity_notification, container, false);
+		
+		headerTxt = (TextView) rootView.findViewById(R.id.header_txt);
 		headerTxt.setText(R.string.notification);
+		return rootView;
 	}
+	
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.notification, menu);
-		return true;
-	}
+	
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {

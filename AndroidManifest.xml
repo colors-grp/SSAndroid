@@ -19,7 +19,7 @@
         android:label="@string/app_name"
         android:theme="@android:style/Theme.NoTitleBar" >
         <activity
-            android:name="com.colors.supersaym.SplashActivity"
+            android:name="com.colors.supersaym.Views.SplashActivity"
             android:label="@string/title_activity_splash"
             android:screenOrientation="portrait" >
              <intent-filter>
@@ -29,7 +29,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.colors.supersaym.MainActivity"
+            android:name="com.colors.supersaym.Views.MainActivity"
             android:label="@string/title_activity_main"
             android:screenOrientation="portrait" >
            
@@ -43,39 +43,39 @@
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/app_id" />
-
         <activity
-            android:name="com.colors.supersaym.EpisodesActivity"
+            android:name="com.colors.supersaym.Views.EpisodesActivity"
             android:label="@string/title_activity_collections"
             android:screenOrientation="portrait" >
         </activity>
+      
         <activity
-            android:name="com.colors.supersaym.HomeActivity"
+            android:name="com.colors.supersaym.tabs.HomeActivity"
             android:label="@string/title_activity_home"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.colors.supersaym.MeActivity"
+            android:name="com.colors.supersaym.Views.MeActivity"
             android:label="@string/title_activity_me"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.colors.supersaym.NotificationActivity"
+           android:name="com.colors.supersaym.Views.NotificationActivity"
             android:label="@string/title_activity_notification"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.colors.supersaym.ScoreboardActivity"
+            android:name="com.colors.supersaym.Views.ScoreboardActivity"
             android:label="@string/title_activity_scoreboard"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.colors.supersaym.GuideActivity"
+            android:name="com.colors.supersaym.Views.GuideActivity"
             android:label="@string/title_activity_guide"
             android:screenOrientation="portrait" >
+             
         </activity>
-        <activity
-            android:name="com.colors.supersaym.GuideDetailsActivity"
+        <activity  android:name="com.colors.supersaym.GuideDetailsActivity"
             android:label="@string/title_activity_guide_details" >
         </activity>
     </application>

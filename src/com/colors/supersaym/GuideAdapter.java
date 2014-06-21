@@ -3,6 +3,9 @@ package com.colors.supersaym;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import com.colors.supersaym.Views.GuideActivity;
+import com.colors.supersaym.dataobjects.GuideData;
+
 import android.app.Activity;
 import android.content.Context;
 import android.util.Log;
@@ -13,14 +16,16 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+
 public class GuideAdapter extends BaseAdapter {
     
     private Activity activity;
-    private ArrayList<HashMap<String, String>> data;
+    private ArrayList<GuideData> data;
     private static LayoutInflater inflater=null;
     public ImageLoader imageLoader; 
     
-    public GuideAdapter(Activity a, ArrayList<HashMap<String, String>> d) {
+
+    public GuideAdapter(Activity a, ArrayList<GuideData> d) {
         activity = a;
         data=d;
         inflater = (LayoutInflater)activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -49,13 +54,13 @@ public class GuideAdapter extends BaseAdapter {
         TextView time = (TextView)vi.findViewById(R.id.time); // time
         ImageView thumb_image=(ImageView)vi.findViewById(R.id.list_image); // thumb image
         
-        HashMap<String, String> mosalsal = new HashMap<String, String>();
+        GuideData mosalsal = new GuideData();
         mosalsal = data.get(position);
         
         // Setting all values in listview
-        name.setText(mosalsal.get(GuideActivity.KEY_NAME));
-        time.setText(mosalsal.get(GuideActivity.KEY_TIME));
-        imageLoader.displayImage(mosalsal.get(GuideActivity.KEY_THUMB_URL), thumb_image);
+        name.setText(mosalsal.name);
+ //       time.setText(mosalsal.get(GuideActivity.KEY_TIME));
+       // imageLoader.displayImage(mosalsal.get(GuideActivity.KEY_THUMB_URL), thumb_image);
         return vi;
     }
 }

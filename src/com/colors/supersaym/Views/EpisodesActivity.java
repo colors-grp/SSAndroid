@@ -1,30 +1,47 @@
-package com.colors.supersaym;
+package com.colors.supersaym.Views;
 
-import android.app.Activity;
+
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class EpisodesActivity extends Activity {
+import com.colors.supersaym.R;
+import com.colors.supersaym.R.drawable;
+import com.colors.supersaym.R.id;
+import com.colors.supersaym.R.layout;
+import com.colors.supersaym.R.string;
+
+public class EpisodesActivity extends Fragment {
 	ImageView alfleila, mnqatel, mosalsalat, sallyseyamak;
 	TextView headerTxt;
+	private View rootView;
 
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_episodes);
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+
+		 rootView = inflater.inflate(R.layout.activity_episodes, container, false);
 		
-		headerTxt = (TextView) findViewById(R.id.header_txt);
+		initUI();
+
+		return rootView;
+	}
+
+	private void initUI() {
+		headerTxt = (TextView)rootView. findViewById(R.id.header_txt);
 		headerTxt.setText(R.string.episodes);
 		
-		alfleila = (ImageView) findViewById(R.id.alfleila);
-		mnqatel = (ImageView) findViewById(R.id.mnqatel);
-		mosalsalat = (ImageView) findViewById(R.id.mosalsalat);
-		sallyseyamak = (ImageView) findViewById(R.id.sallyseyamak);
+		alfleila = (ImageView) rootView.findViewById(R.id.alfleila);
+		mnqatel = (ImageView) rootView.findViewById(R.id.mnqatel);
+		mosalsalat = (ImageView) rootView.findViewById(R.id.mosalsalat);
+		sallyseyamak = (ImageView) rootView.findViewById(R.id.sallyseyamak);
 
 		alfleila.setOnClickListener(new OnClickListener() {
 			
@@ -34,6 +51,9 @@ public class EpisodesActivity extends Activity {
 				mnqatel.setImageResource(R.drawable.mnqatel);
 				mosalsalat.setImageResource(R.drawable.mosalsalat);
 				sallyseyamak.setImageResource(R.drawable.sallyseyamak);
+				alfLilaFragment alfLila = new alfLilaFragment(getActivity());
+				addContentFragment(alfLila, true);
+				
 			}
 		});
 		
@@ -69,27 +89,24 @@ public class EpisodesActivity extends Activity {
 				sallyseyamak.setImageResource(R.drawable.sallyseyamakselected);
 			}
 		});
-		
+				
 	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
+	
 
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.episodes, menu);
-		return true;
-	}
-
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle action bar item clicks here. The action bar will
-		// automatically handle clicks on the Home/Up button, so long
-		// as you specify a parent activity in AndroidManifest.xml.
-		int id = item.getItemId();
-		if (id == R.id.action_settings) {
-			return true;
+	public void addContentFragment(Fragment fragment, boolean addToBackStack) {
+		FragmentManager fManager = getActivity().getSupportFragmentManager();
+		Fragment currentFragment = fManager.findFragmentByTag(fragment
+				.getClass().getName());
+		if (currentFragment == null) {
+			FragmentTransaction fTransaction = fManager.beginTransaction();
+			fTransaction.replace(R.id.content_fram, fragment, fragment
+					.getClass().getName());
+			if (addToBackStack) {
+				fTransaction.addToBackStack(null);
+			}
+			fTransaction.commit();
 		}
-		return super.onOptionsItemSelected(item);
 	}
 
 	
